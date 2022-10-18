@@ -23,6 +23,7 @@ const Contact = () => {
         }}
       />
       firstName
+      <br />
       <input
         type='text'
         value={lastName}
@@ -32,6 +33,7 @@ const Contact = () => {
         }}
       />
       lastName
+      <br />
       <input
         type='text'
         value={email}
@@ -41,12 +43,18 @@ const Contact = () => {
         }}
       />
       email
+      <br />
       <button
         onClick={() => {
-          if (email !== "" && lastName !== "" && firstName !== "") {
+          if (
+            email !== "" &&
+            email.includes("@") === true &&
+            lastName !== "" &&
+            firstName !== ""
+          ) {
             navigate("/");
           } else {
-            alert("Please fill all the fields");
+            alert("Please fill all the fields or check your email");
           }
         }}
       >

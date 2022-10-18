@@ -15,8 +15,7 @@ code {
 .navBar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #0f3a8f;
+  background-color: #067c33;
   color: white;
-  padding: 0 20px;
+  padding: 20px;
 }
