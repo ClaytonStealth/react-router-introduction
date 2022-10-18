@@ -5,7 +5,7 @@ const Contact = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   // const redirectHandler = () => {
   //   navigate();
@@ -14,6 +14,7 @@ const Contact = () => {
     <div>
       <NavBar />
       <h1>Contact</h1>
+      {errorMessage && <p>{errorMessage}</p>}
       <input
         type='text'
         value={firstName}
@@ -46,16 +47,16 @@ const Contact = () => {
       <br />
       <button
         onClick={() => {
-          if (
-            email !== "" &&
-            email.includes("@") === true &&
-            lastName !== "" &&
-            firstName !== ""
-          ) {
-            navigate("/");
-          } else {
-            alert("Please fill all the fields or check your email");
+          if (email === "" || email.includes("@") !== true) {
+            setErrorMessage("Please verify your email");
+            return;
           }
+          if (lastName === "" || firstName === "") {
+            setErrorMessage("Please verify your name");
+            return;
+          }
+
+          navigate("/");
         }}
       >
         Submit
