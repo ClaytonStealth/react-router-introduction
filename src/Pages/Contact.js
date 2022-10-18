@@ -16,43 +16,44 @@ const Contact = () => {
       <h1>Contact</h1>
       {errorMessage && <p>{errorMessage}</p>}
       <input
-        type='text'
+        placeholder="First Name"
+        type="text"
         value={firstName}
         onChange={(e) => {
           setFirstName(e.target.value);
           console.log(firstName);
         }}
       />
-      firstName
       <br />
       <input
-        type='text'
+        placeholder="Last Name"
+        type="text"
         value={lastName}
         onChange={(e) => {
           setLastName(e.target.value);
           console.log(lastName);
         }}
       />
-      lastName
       <br />
       <input
-        type='text'
+        placeholder="Email"
+        type="text"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
           console.log(email);
         }}
       />
-      email
       <br />
       <button
         onClick={() => {
-          if (email === "" || email.includes("@") !== true) {
-            setErrorMessage("Please verify your email");
-            return;
-          }
           if (lastName === "" || firstName === "") {
             setErrorMessage("Please verify your name");
+            return;
+          }
+
+          if (email === "" || email.includes("@") !== true) {
+            setErrorMessage("Please verify your email");
             return;
           }
 
