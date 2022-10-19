@@ -11,6 +11,9 @@ const NavBar = () => {
       <button className='navLinks'>
         <Link to='/contact'>Contact</Link>
       </button>
+      <button>
+        <Link to='/signups'>Signup</Link>
+      </button>
     </div>
   );
 };

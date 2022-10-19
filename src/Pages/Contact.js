@@ -1,23 +1,22 @@
-import NavBar from "../Components/NavBar";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 const Contact = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const [signupList, handleAddSignup] = useOutletContext();
   // const redirectHandler = () => {
   //   navigate();
   // };
   return (
-    <div>
-      <NavBar />
+    <div className='contactForm'>
       <h1>Contact</h1>
       {errorMessage && <p>{errorMessage}</p>}
       <input
-        placeholder="First Name"
-        type="text"
+        placeholder='First Name'
+        type='text'
         value={firstName}
         onChange={(e) => {
           setFirstName(e.target.value);
@@ -26,8 +25,8 @@ const Contact = () => {
       />
       <br />
       <input
-        placeholder="Last Name"
-        type="text"
+        placeholder='Last Name'
+        type='text'
         value={lastName}
         onChange={(e) => {
           setLastName(e.target.value);
@@ -36,8 +35,8 @@ const Contact = () => {
       />
       <br />
       <input
-        placeholder="Email"
-        type="text"
+        placeholder='Email'
+        type='text'
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
@@ -47,6 +46,7 @@ const Contact = () => {
       <br />
       <button
         onClick={() => {
+          handleAddSignup(firstName, lastName, email);
           if (lastName === "" || firstName === "") {
             setErrorMessage("Please verify your name");
             return;
@@ -56,7 +56,7 @@ const Contact = () => {
             setErrorMessage("Please verify your email");
             return;
           }
-
+          handleAddSignup(firstName, lastName, email);
           navigate("/");
         }}
       >

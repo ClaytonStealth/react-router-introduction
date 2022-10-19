@@ -13,9 +13,23 @@ code {
 }
 
 .navBar {
-  display: flex;
-  justify-content: space-between;
-  background-color: #067c33;
+  background-color: rgb(21, 231, 98);
   color: white;
-  padding: 20px;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 0;
+}
+
+.navBar:link {
+  text-decoration: none;
+}
+
+.contactForm {
+  align-items: center;
+  justify-content: center;
 }

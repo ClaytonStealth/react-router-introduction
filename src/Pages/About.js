@@ -1,9 +1,8 @@
-import NavBar from "../Components/NavBar";
+import { Outlet } from "react-router-dom";
 
 const About = () => {
   return (
     <div>
-      <NavBar />
       <h1>About</h1>
     </div>
   );
