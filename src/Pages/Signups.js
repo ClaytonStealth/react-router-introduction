@@ -10,8 +10,12 @@ const Signups = () => {
           navigate(`/signups/${e.target.value}`);
         }}
       >
-        {signupList.map((signup) => {
-          return <option value={signup.email}>{signup.firstName}</option>;
+        {signupList.map((signup, index) => {
+          return (
+            <option key={index} value={signup.email}>
+              {signup.firstName}
+            </option>
+          );
         })}
         <option></option>
       </select>
