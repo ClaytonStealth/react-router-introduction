@@ -34,6 +34,7 @@ const Contact = () => {
         }}
       />
       <br />
+      {/* on all these inputs setting the variable based of the event target value (the text input box) and setting the value of the inputs to the designated variable */}
       <input
         placeholder='Email'
         type='text'
@@ -44,9 +45,11 @@ const Contact = () => {
         }}
       />
       <br />
+      {/* handleAddSignup is taking the first/last/email from the text inputs above and running some checks to make sure the feilds are all filled out correctly and then navigating home if it all worked
+       */}
       <button
         onClick={() => {
-          handleAddSignup(firstName, lastName, email);
+          // handleAddSignup(firstName, lastName, email);
           if (lastName === "" || firstName === "") {
             setErrorMessage("Please verify your name");
             return;

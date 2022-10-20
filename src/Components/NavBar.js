@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
+    //navbar is the top of the page with the links to the different pages/ Link is imported from react-router-dom to make the links in react
     <div className='navBar'>
       <button className='navLinks'>
         <Link to='/'>Home</Link>
